@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:mood_tracker/pages/home.dart';
+import 'package:mood_tracker/pages/track.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -50,6 +51,22 @@ class WelcomePage extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
+              SizedBox(
+              width: 342,
+              height: 48,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const TrackPage())
+                  );
+                },
+                style: TextButton.styleFrom(
+                  backgroundColor: Color(0xFF5038BC),
+                  foregroundColor: Color(0xFFFFFFFF)
+                ),
+                child: Text('Lanjut'),
+              ),
+            )
             ]
           )
         )
