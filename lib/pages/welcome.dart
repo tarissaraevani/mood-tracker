@@ -35,7 +35,7 @@ class WelcomePage extends StatelessWidget {
               SizedBox(
                 width: 342, height: 60,
                 child: Text(
-                'Kenali Setiap Perasaanmuuuuuuuuu',
+                'Kenali Setiap Perasaanmu',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
