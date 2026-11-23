@@ -13,7 +13,6 @@ class WelcomePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -32,28 +31,70 @@ class WelcomePage extends StatelessWidget {
                   )
                 ]
                 ),
-              Container(width: 500, height: 300, color: Colors.blue),
-              Text(
-                'Kenali Setiap Perasaanmu',
+              SizedBox(width: 500, height: 300),
+              SizedBox(
+                width: 342, height: 60,
+                child: Text(
+                'Kenali Setiap Perasaanmuuuuuuuuu',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF111827),
                 ),
                 textAlign: TextAlign.center,
+              )
               ),
-              Text(
-                'Setiap mood yang kamu rasakan itu berharga. Catat, pahami, dan rayakan perjalanan emosimu.',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xFF6B7280),
-                ),
-                textAlign: TextAlign.center,
+              SizedBox(height: 8),
+              SizedBox(width: 342, height: 60,
+                child: Text(
+                  'Setiap mood yang kamu rasakan itu berharga. Catat, pahami, dan rayakan perjalanan emosimu.',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFF6B7280),
+                  ),
+                  textAlign: TextAlign.center,
+              )
               ),
-              SizedBox(
-              width: 342,
-              height: 48,
+              Expanded(child: PageView(scrollDirection: Axis.horizontal, allowImplicitScrolling: true,
+              children: [
+                Center(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        width: 24,
+                        height: 8,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF5038BC),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        width: 8,
+                        height: 8,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFD9D9D9),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        width: 8,
+                        height: 8,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFD9D9D9),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                    ],
+                  )
+                )
+              ]
+              )
+              ),
+              SizedBox(width: 342, height: 48,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
