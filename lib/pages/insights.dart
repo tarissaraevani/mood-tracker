@@ -13,10 +13,10 @@ class InsightsPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
           child: Column(
             children: [
-              SizedBox(width: 500, height: 320),
+              SizedBox(width: 500, height: 360),
               SizedBox(width: 342, height: 60,
               child: Text(
-                'Temukan Pola & Pemicunya',
+                'Temukan Pola \n & Pemicunya',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,

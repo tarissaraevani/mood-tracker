@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:mood_tracker/pages/home.dart';
 import 'package:mood_tracker/pages/track.dart';
@@ -10,10 +11,9 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
           child: Column(
             children: [
+              SizedBox(width: 390, height: 44),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -31,11 +31,14 @@ class WelcomePage extends StatelessWidget {
                   )
                 ]
                 ),
-              SizedBox(width: 500, height: 300),
+              Container(
+                width: 500, height: 300,
+                child: SvgPicture.asset('assets/moods/mood-happy.svg')
+              ),
               SizedBox(
                 width: 342, height: 60,
                 child: Text(
-                'Kenali Setiap Perasaanmu',
+                'Kenali Setiap\nPerasaanmu',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
@@ -94,23 +97,25 @@ class WelcomePage extends StatelessWidget {
               ]
               )
               ),
-              SizedBox(width: 342, height: 48,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const TrackPage())
-                  );
-                },
-                style: TextButton.styleFrom(
-                  backgroundColor: Color(0xFF5038BC),
-                  foregroundColor: Color(0xFFFFFFFF)
-                ),
-                child: Text('Lanjut'),
-              ),
-            )
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+                child: SizedBox(width: 342, height: 48,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const TrackPage())
+                      );
+                    },
+                    style: TextButton.styleFrom(
+                      backgroundColor: Color(0xFF5038BC),
+                      foregroundColor: Color(0xFFFFFFFF)
+                    ),
+                    child: Text('Lanjut'),
+                  ),
+                )
+                )
             ]
           )
-        )
       )
     );
   }

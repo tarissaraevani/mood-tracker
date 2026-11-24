@@ -10,10 +10,9 @@ class TrackPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-          child: Column(
+        child: Column(
             children: [
+              SizedBox(width: 390, height: 44),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -93,25 +92,27 @@ class TrackPage extends StatelessWidget {
               ]
               )
               ),
-              SizedBox(
-              width: 342,
-              height: 48,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const InsightsPage())
-                  );
-                },
-                style: TextButton.styleFrom(
-                  backgroundColor: Color(0xFF5038BC),
-                  foregroundColor: Color(0xFFFFFFFF)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+                child: SizedBox(
+                  width: 342,
+                  height: 48,
+                  child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const InsightsPage())
+                    );
+                  },
+                  style: TextButton.styleFrom(
+                    backgroundColor: Color(0xFF5038BC),
+                    foregroundColor: Color(0xFFFFFFFF)
+                  ),
+                  child: Text('Lanjut'),
                 ),
-                child: Text('Lanjut'),
-              ),
+              )
             )
             ]
           )
-        )
       )
     );
   }
