@@ -13,11 +13,11 @@ class WelcomePage extends StatelessWidget {
       body: SafeArea(
           child: Column(
             children: [
-              SizedBox(width: 390, height: 44),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton(
+              Padding(
+                padding: const EdgeInsets.all(24),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
                     style: TextButton.styleFrom(
                       foregroundColor: Color(0xFF6B7280),
                     ),
@@ -28,12 +28,73 @@ class WelcomePage extends StatelessWidget {
                         );
                     },
                     child: const Text('Lewati'),
-                  )
-                ]
+                  ),
                 ),
-              Container(
-                width: 500, height: 300,
-                child: SvgPicture.asset('assets/moods/mood-happy.svg')
+              ),
+              SizedBox(
+                height: 388,
+                width: double.infinity,
+                child: Stack(
+                  clipBehavior: Clip.none, // Prevents cutting off shapes at the edges
+                  children: [
+                    // Pink Mood
+                    Positioned(
+                      top: 20,
+                      right: 230,
+                      child: Container(
+                        width: 220,
+                        height: 220,
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFFF7EB6),
+                          shape: BoxShape.circle
+                        ),
+                      )
+                    ),
+                    Positioned(
+                      top: 95,
+                      left: 39,
+                      child: SvgPicture.asset(
+                        'assets/moods/mood-excited.svg',
+                        width: 70, height: 70
+                      ),
+                    ),
+
+                    // Teal Mood
+                    Positioned(
+                      top: 193,
+                      left: 207,
+                      child: Container(
+                        width: 203,
+                        height: 207,
+                        decoration: const BoxDecoration(
+                          color: Color(0XFF4ECDC4),
+                          shape: BoxShape.circle
+                        ),
+                      )
+                    ),
+                    Positioned(
+                      top: 264,
+                      left: 269,
+                      child: SvgPicture.asset(
+                        'assets/moods/mood-calm-2.svg',
+                        width: 77, height: 76
+                      ),
+                    ),
+
+                    // Yellow Mood
+                    Positioned(
+                      top: 136,
+                      left: 0,
+                      right: 0,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          'assets/moods/mood-happy.svg',
+                          width: 128, height: 128
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
                 width: 342, height: 60,

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import 'dart:math' as math;
 
 import 'package:mood_tracker/pages/home.dart';
 
@@ -9,14 +12,121 @@ class InsightsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-          child: Column(
+        child: Column(
             children: [
-              SizedBox(width: 500, height: 360),
+              Padding(padding: const EdgeInsets.all(24),
+              child: SizedBox(
+                height: 48
+              )),
+              SizedBox(
+                height: 388,
+                width: double.infinity,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Positioned(
+                      top: 60,
+                      right: 260,
+                      child: Container(
+                        width: 200,
+                        height: 200,
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFB49AF2),
+                          shape: BoxShape.circle
+                        ),
+                      )
+                    ),
+
+                    Positioned(
+                      top: 250.5,
+                      left: 279.09,
+                      child: Container(
+                        width: 170,
+                        height: 170,
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFFF6B5B),
+                          shape: BoxShape.circle
+                        ),
+                      )
+                    ),
+
+                    Positioned(
+                      top: 55.54,
+                      left: 160,
+                      child: Transform.rotate(
+                        angle: -4 * math.pi / 180,
+                        child: SvgPicture.asset(
+                        'assets/moods/mood-sad.svg',
+                        width: 64, height: 64
+                        ),
+                      )
+                    ),
+
+                    Positioned(
+                      top: 80,
+                      left: 63.31,
+                      child: Transform.rotate(
+                        angle: 6 * math.pi / 180,
+                        child: SvgPicture.asset(
+                        'assets/moods/mood-happy.svg',
+                        width: 64, height: 64
+                        ),
+                      )
+                    ),
+
+                    Positioned(
+                      top: 174.42,
+                      left: 70,
+                      child: Transform.rotate(
+                        angle: -5 * math.pi / 180,
+                        child: SvgPicture.asset(
+                        'assets/moods/mood-calm.svg',
+                        width: 64, height: 64
+                        ),
+                      )
+                    ),
+
+                    Positioned(
+                      top: 205,
+                      left: 154.42,
+                      child: Transform.rotate(
+                        angle: 5 * math.pi / 180,
+                        child: SvgPicture.asset(
+                        'assets/moods/mood-anxious.svg',
+                        width: 64, height: 64
+                        ),
+                      )
+                    ),
+
+                    Positioned(
+                      top: 173.31,
+                      left: 250,
+                      child: Transform.rotate(
+                        angle: -6 * math.pi / 180,
+                        child: SvgPicture.asset(
+                        'assets/moods/mood-excited.svg',
+                        width: 64, height: 64
+                        ),
+                      )
+                    ),
+
+                    Positioned(
+                      top: 85,
+                      right: 76.16,
+                      child: Transform.rotate(
+                        angle: 4 * math.pi / 180,
+                        child: SvgPicture.asset(
+                        'assets/moods/mood-angry.svg',
+                        width: 64, height: 64
+                        ),
+                      )
+                    ),
+                  ],
+                ),
+              ),
               SizedBox(width: 342, height: 60,
               child: Text(
-                'Temukan Pola \n & Pemicunya',
+                'Temukan Pola\n& Pemicunya',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
@@ -75,26 +185,28 @@ class InsightsPage extends StatelessWidget {
               ]
               )
               ),
-              SizedBox(
-              width: 342,
-              height: 48,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomePage())
-                  );
-                },
-                style: TextButton.styleFrom(
-                  backgroundColor: Color(0xFF5038BC),
-                  foregroundColor: Color(0xFFFFFFFF)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+                child: SizedBox(
+                width: 342,
+                height: 48,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const HomePage())
+                    );
+                  },
+                  style: TextButton.styleFrom(
+                    backgroundColor: Color(0xFF5038BC),
+                    foregroundColor: Color(0xFFFFFFFF)
+                  ),
+                  child: Text('Mulai Sekarang'),
                 ),
-                child: Text('Mulai Sekarang'),
-              ),
-            )
+                )
+              )
             ]
           )
         )
-      )
     );
   }
 }

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import 'dart:math' as math;
 
 import 'package:mood_tracker/pages/home.dart';
 import 'package:mood_tracker/pages/insights.dart';
@@ -12,28 +15,109 @@ class TrackPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
             children: [
-              SizedBox(width: 390, height: 44),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton(
+              Padding(
+                padding: const EdgeInsets.all(24),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
                     style: TextButton.styleFrom(
                       foregroundColor: Color(0xFF6B7280),
                     ),
-                    onPressed:() {
+                    onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => const HomePage())
-                        );
+                      );
                     },
-                    child: const Text('Lewati'),
+                    child: const Text('Lewati')
                   )
-                ]
+                )
+              ),
+              SizedBox(
+                height: 388,
+                width: double.infinity,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Positioned(
+                      top: 30,
+                      left: 250,
+                      child: Container(
+                        width: 200,
+                        height: 200,
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFFFC247),
+                          shape: BoxShape.circle
+                        ),
+                      )
+                    ),
+
+                    Positioned(
+                      top: 240,
+                      right: 280,
+                      child: Container(
+                        width: 160,
+                        height: 160,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF5B9BF0),
+                          shape: BoxShape.circle
+                        ),
+                      )
+                    ),
+
+                    Positioned(
+                      top: 70.8,
+                      left: 210,
+                      child: Transform.rotate(
+                        angle: -6 * math.pi / 180,
+                        child: SvgPicture.asset(
+                        'assets/moods/mood-happy.svg',
+                        width: 88, height: 88
+                        ),
+                      )
+                    ),
+
+                    Positioned(
+                      top: 100,
+                      left: 67.75,
+                      child: Transform.rotate(
+                        angle: 8 * math.pi / 180,
+                        child: SvgPicture.asset(
+                          'assets/moods/mood-calm.svg',
+                          width: 88, height: 88
+                        )
+                      )
+                    ),
+
+                    Positioned(
+                      top: 212.33,
+                      left: 80,
+                      child: Transform.rotate(
+                        angle: -5 * math.pi / 180,
+                        child: SvgPicture.asset(
+                          'assets/moods/mood-sad.svg',
+                          width: 88, height: 88
+                        )
+                      )
+                    ),
+
+                    Positioned(
+                      top: 240,
+                      left: 200.8,
+                      child: Transform.rotate(
+                        angle: 6 * math.pi / 180,
+                        child: SvgPicture.asset(
+                          'assets/moods/mood-excited.svg',
+                          width: 88, height: 88
+                        )
+                      )
+                    ),
+                  ],
                 ),
-              SizedBox(width: 500, height: 300),
+              ),
               SizedBox(width: 342, height: 60,
               child: Text(
-                'Catat Mood dalam Hitungan Detik',
+                'Catat Mood dalam\nHitungan Detik',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,

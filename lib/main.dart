@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// screen dimesions (390x844)
+
 // import 'package:flutter/material.dart';
 // import 'package:hive_ce_flutter/hive_flutter.dart';
 
