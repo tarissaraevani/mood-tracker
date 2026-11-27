@@ -78,7 +78,7 @@ class InsightsPage extends StatelessWidget {
                       top: 174.42,
                       left: 70,
                       child: Transform.rotate(
-                        angle: -5 * math.pi / 180,
+                        angle: -15 * math.pi / 180,
                         child: SvgPicture.asset(
                         'assets/moods/mood-calm.svg',
                         width: 64, height: 64
